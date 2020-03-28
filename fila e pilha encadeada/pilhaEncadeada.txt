@@ -1,0 +1,29 @@
+package com.dedd;
+
+public class PilhaNoEncadeado {
+	private No primeiro = null;
+	private No ultimo = null;
+	private int quantidade = 0;
+
+	public void empilhar(int elemento) {
+		
+		No novoNO = new No();
+		
+		novoNO.setElemento(elemento);
+		novoNO.setProximo(null);
+		novoNO.setAnterior(ultimo);
+		ultimo.setProximo(novoNO);
+		ultimo=novoNO;
+		quantidade++;
+	}
+
+
+	public void desempilhar() {
+		ultimo.setAnterior(null);
+		ultimo.setProximo(null);
+		quantidade--;
+	}
+
+}
+
+}

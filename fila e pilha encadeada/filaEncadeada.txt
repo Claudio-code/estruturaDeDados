@@ -1,0 +1,26 @@
+package com.dedd;
+
+public class filaNoEncadeado {
+	private No primeiro = null;
+	private No ultimo = null;
+	private int quantidade = 0;
+	
+	public void enfileirar(int elemento) {
+			No novoNO = new No();
+			
+			novoNO.setElemento(elemento);
+			novoNO.setProximo(null);
+			novoNO.setAnterior(ultimo);
+			ultimo.setProximo(novoNO);
+			ultimo=novoNO;
+			quantidade++;
+	}
+	
+	public void desinfileirar() {
+		primeiro.setProximo(null);
+		primeiro.setAnterior(null);
+		quantidade--;
+		if(quantidade==0) { ultimo=null; }
+		}
+	
+}
